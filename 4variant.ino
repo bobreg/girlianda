@@ -58,16 +58,16 @@ void selectionMode(){
     digitalWrite(i + 7, onLed);
   }
 }
-void lift1(){  //режим мигания
+void lift1(){  //режим мигания (включение и выключение светодиодов)
   int cycle = random(3,7); //переменная количества циклов включения 
   for(int a = 0; a < cycle; a++) {
     analogWrite(ledLine, 255);
-    delay(random(100, 1000));
+    delay(random(100, 1000));  //пауза включения. Пауза будет длинной от 100 до 1000 мс
     analogWrite(ledLine, 0);
-    delay(random(100, 1000));
+    delay(random(100, 1000));  //пауза выключения
   }
 }
-void lift2(){  //режим мигания
+void lift2(){  //режим мигания (плавное включение и правное выключение)
   int cycle = random(3,7);
   for(int a = 0; a < cycle; a++){
     ledMax = random(100, 254);
